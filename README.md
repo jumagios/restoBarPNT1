@@ -1,2 +1,2 @@
-# restoBarPNT1
-pagina de prueba en html y css
+# PNT1
+Programa de Restoran ORT utilizando HTML, CSS y JS

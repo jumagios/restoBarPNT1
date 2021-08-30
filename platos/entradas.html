@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<body>
+
+    <!-- Top menu -->
+    <div class="top">
+        <div class="xlarge">
+            <div id="mainPage" style="cursor:pointer; color:white">Resto ORT</div>
+        </div>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="main content padding" style="max-width:1200px;margin-top:100px">
+
+        <!-- First Photo Grid-->
+        <div class="row-padding padding-16 center" id="food">
+            <div class="quarter">
+                <img src="../images/entradas/humus.jpg" alt="hummus" style="width:100%;">
+                <h3>Hummus de garbanzos </h3>
+                <p>Garbanzos, olivas, paprika y comino</p>
+            </div>
+            <div class="quarter">
+                <img src="../images/entradas/empanaditas.jpg" alt="empanaditas" style="width:100%">
+                <h3>Empanaditas</h3>
+                <p>Empanaditas clásicas criollas, fritas al disco</p>
+            </div>
+            <div class="quarter">
+                <img src="../images/entradas/rusticas.jpg" alt="papasRusticas" style="width:100%">
+                <h3>Papás rústicas</h3>
+                <p>Papas en cuñas con cáscara, al horno</p>
+                <p>Nespresso?? What else?</p>
+            </div>
+            <div class="quarter">
+                <img src="../images/entradas/salmon.jpg" alt="salmon" style="width:100%">
+                <h3>Bruschettas de salmón ahumado</h3>
+                <p>Salmón ahumado en tostaditas con queso crema y ciboulette</p>
+            </div>
+        </div>
+
+        <hr id="about">
+
+        <!-- Footer -->
+        <footer class="row-padding padding-32" style="background-color:#0f0a0a;color:white">
+            <div class="third">
+                <h4>CARTA RESTO ORT (PNT1)</h4>
+                <p>Matias Guarnaccia</p>
+                <p>Juan M. Gimenez</p>
+                <p>Martín Suarez Díaz</p>
+                <p>Jonatan Rodriguez</p>
+            </div>
+
+        </footer>
+
+
+        <!-- End page content -->
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $('#mainPage').click(function (e) {
+        location.href = '../index.html';
+    });
+</script>
