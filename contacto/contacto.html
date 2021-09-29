@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<title>Resto ORT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<style>
+</style>
+
+<body>
+
+    <!-- Top menu -->
+    <div class="top">
+        <div class="xlarge">
+            <div id="mainPage" style="cursor:pointer; color:white">Resto ORT</div>
+        </div>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="main content" style="max-width:1200px;margin-top:100px">
+
+        <!-- First Photo Grid-->
+        <form onsubmit="return validateForm()" method="post">
+            <h1>Registro</h1>
+            <div>
+                <label for="name">Nombre:</label>
+                <input id="name" type="text" placeholder="nombre" />
+            </div>
+            <div>
+                <label>Apellido:</label>
+                <input id="apellido" type="text" placeholder="apellido" />
+            </div>
+            <div>
+                <div>
+                    <label id="sexoTexto">Género: </label>
+                    <input type="radio" name="sexo" value="hombre" />
+                    <label id="sexo">Hombre</label>
+                    <input type="radio" name="sexo" value="mujer" />
+                    <label >Mujer</label>
+                    <input type="radio" name="sexo" value="otro" />
+                    <label >Otro</label>
+                </div>
+            </div>
+            <div>
+                <label>Mail:</label>
+                <input id="email" type="email" />
+                <label>Contraseña:</label>
+                <input id="password" type="password" />
+            </div>
+            <div>
+                <label>Fecha nacimiento:</label>
+                <input id="date" type="date" />
+            </div>
+            <div>
+                <label class="terminos">Estoy de acuerdo con los términos y condiciones </label>
+                <input id="terminos" type="checkbox" />
+            </div>
+            <input type="submit" />
+        </form>
+
+
+        <hr id="about">
+
+        <!-- Footer -->
+        <footer class="row-padding" style="background-color:#0f0a0a;color:white;">
+            <div class="third">
+                <h4>CARTA RESTO ORT (PNT1)</h4>
+                <p>Matias Guarnaccia</p>
+                <p>Juan M. Gimenez</p>
+                <p>Martín Suarez Díaz</p>
+                <p>Jonatan Rodriguez</p>
+            </div>
+
+        </footer>
+
+        <!-- End page content -->
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $('#mainPage').click(function (e) {
+        location.href = '../index.html';
+    });
+
+    function validarElementoById(id) {
+        var elemento = document.getElementById(id);
+
+        if (elemento.value == '') {
+            elemento.style.backgroundColor = 'lightcoral';
+            return false;
+        }
+        else {
+            elemento.style.backgroundColor = 'white';
+            return true;
+        }
+    }
+
+    function validarElementoCheckById(id) {
+        var elemento = document.getElementById(id);
+        var texto = document.getElementsByClassName(id);
+
+        if (!elemento.checked) {
+            elemento.style.backgroundColor = 'lightcoral';
+            texto[0].style.color = 'lightcoral';
+            return false;
+        }
+        else {
+            elemento.style.backgroundColor = 'white';
+            texto[0].style.color = 'black';
+            return true;
+        }
+    }
+
+    function validarElementoByName(name) {
+        var elementos = document.getElementsByName(name);
+        var texto = document.getElementById(name + 'Texto');
+
+        var seleccionoGenero = false;
+        for (var i = 0; i < elementos.length && !seleccionoGenero; i++) {
+            seleccionoGenero = seleccionoGenero || elementos[i].checked
+        }
+
+        if (!seleccionoGenero) {
+            texto.style.color = 'lightcoral';
+            return false;
+        }
+        else {
+            texto.style.color = 'black';
+            return true;
+        }
+    }
+
+    function validateForm() {
+        var formularioCorrecto = true;
+
+        formularioCorrecto = validarElementoById('name')     && formularioCorrecto;
+        formularioCorrecto = validarElementoById('apellido') && formularioCorrecto;
+        formularioCorrecto = validarElementoById('email')    && formularioCorrecto;
+        formularioCorrecto = validarElementoById('password') && formularioCorrecto;
+        formularioCorrecto = validarElementoById('date')     && formularioCorrecto;
+        formularioCorrecto = validarElementoCheckById('terminos') && formularioCorrecto;
+        formularioCorrecto = validarElementoByName('sexo')   && formularioCorrecto;
+
+        if (!formularioCorrecto) {
+            alert('Hay campos incorrectos!');
+        }
+        else {
+            alert('Formulario enviado!');
+        }
+
+        return formularioCorrecto;
+    }
+</script>
+© 2021 GitHub, Inc.
